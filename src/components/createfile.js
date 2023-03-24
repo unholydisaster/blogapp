@@ -5,11 +5,11 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const Newnotes = () => {
-    const userID=Cookies.get("userID")
+    const UserID=Cookies.get("userID")
     const [notes, setNotes]=useState({
         title:"",
         note:"",
-        userOwner:userID
+        userOwner:UserID && UserID.userID ? UserID.userID : ""
     })
     const router = useRouter()
     console.log(userID)
@@ -27,7 +27,7 @@ const Newnotes = () => {
         await axios.post(`${BASE_URL}/api/notes`, notes)
         alert("note created successfully")
         router.push("/")
-    }catch{
+    }catch(err){
         alert("an error occurred")
     }
   }
