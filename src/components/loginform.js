@@ -40,7 +40,7 @@ const Login = () => {
         alert("Successfully logedin")
         console.log(response)
         setCookies("access_token", response.data.token)
-        window.localStorage.setItem("userID", response.data.UserID)
+        localStorage.setItem("userID", response.data.UserID)
         router.push('/')
       }catch(err){
         console.error(err)

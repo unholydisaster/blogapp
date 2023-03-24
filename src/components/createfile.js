@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { useGetId } from '@/hooks/getUserId';
 
 const Newnotes = () => {
-    const [userid,setUserId]=useState(null)
+    const userID=useGetId()
     const [notes, setNotes]=useState({
         title:"",
         note:"",
-        userOwner:userid
+        userOwner:userID
     })
     const router = useRouter()
- console.log(userid)
-  useEffect(() => setUserId(useGetId()), [])
-  
+
   const handleChange=(event)=>{
     const {name,value}=event.target
     setNotes({
@@ -27,7 +25,6 @@ const Newnotes = () => {
     try{
         await axios.post("/api/notes", notes)
         alert("note created successfully")
-        router.push("/")
     }catch(err){
         console.log(err)
     }
