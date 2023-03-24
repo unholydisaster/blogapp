@@ -12,6 +12,7 @@ import { useState } from "react";
 import { useRouter } from 'next/router';
 import {useCookies} from "react-cookie"
 import axios from "axios";
+import Cookies from "js-cookie"
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -40,7 +41,7 @@ const Login = () => {
         alert("Successfully logedin")
         console.log(response)
         setCookies("access_token", response.data.token)
-        localStorage.setItem("userID", response.data.UserID)
+        Cookies.set("userID", response.data.UserID)
         router.push('/')
       }catch(err){
         console.error(err)

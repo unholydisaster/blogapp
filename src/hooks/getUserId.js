@@ -1,3 +1,5 @@
+import Cookies from "js-cookie"
+
 export const useGetId=()=>{
-    return localStorage.getItem("userID")
+    return Cookies.get("userID")
 }
