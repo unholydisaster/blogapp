@@ -23,8 +23,10 @@ const Newnotes = () => {
   const onSubmit=async(event)=>{
     event.preventDefault();
     try{
-        await axios.post("/api/notes", notes)
+        const BASE_URL = process.env.BASE_URL;
+        await axios.post(`${BASE_URL}/api/notes`, notes)
         alert("note created successfully")
+        router.push("/")
     }catch(err){
         console.log(err)
     }
