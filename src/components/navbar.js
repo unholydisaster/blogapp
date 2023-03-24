@@ -1,5 +1,4 @@
 import { AuthButtons, AuthContainers, BurgerLine, ItemContainer, LinkContainer, Links, Logo, LogoutButton, Navbar, NavItem, NavLinks, SearchArea, StyledBurger } from '@/styles/navbarstyles/navbar';
-import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
@@ -41,7 +40,7 @@ const NavbarComponent = () => {
 
     const handleLogout = () => {
       setCookies("access_token","")
-      Cookies.remove("userID")
+      setCookies("userID","")
       router.push("/");
     };
 

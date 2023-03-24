@@ -2,14 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import Cookies from 'js-cookie';
+import {useCookies} from "react-cookie"
 
 const Newnotes = () => {
-    const UserID=Cookies.get("userID")
+    const [cookies,setCookies]=useCookies(["userID"]);
     const [notes, setNotes]=useState({
         title:"",
         note:"",
-        userOwner:UserID && UserID.userID ? UserID.userID : ""
+        userOwner:cookies.userID
     })
     const router = useRouter()
     console.log(userID)
@@ -25,7 +25,6 @@ const Newnotes = () => {
     try{
         const BASE_URL = process.env.BASE_URL;
         await axios.post(`${BASE_URL}/api/notes`, notes)
-        alert("note created successfully")
         router.push("/")
     }catch(err){
         alert("an error occurred")

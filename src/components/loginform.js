@@ -12,13 +12,13 @@ import { useState } from "react";
 import { useRouter } from 'next/router';
 import {useCookies} from "react-cookie"
 import axios from "axios";
-import Cookies from "js-cookie"
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
-    const [_,setCookies]=useCookies(["access_token"]);
+    const [_,setCookies]=useCookies(["access_token","userID"]);
   
     const handleEmailChange = (event) => {
       setEmail(event.target.value);
@@ -41,7 +41,7 @@ const Login = () => {
         alert("Successfully logedin")
         console.log(response)
         setCookies("access_token", response.data.token)
-        Cookies.set("userID", response.data.UserID)
+        setCookies("userID", response.data.token)
         router.push('/')
       }catch(err){
         console.error(err)
