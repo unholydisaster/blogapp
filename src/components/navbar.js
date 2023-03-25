@@ -8,7 +8,7 @@ const NavbarComponent = () => {
     const[open, setOpen]=useState(false)
     const [search, setSearch] = useState('');
     const router=useRouter()
-    const [cookies,setCookies]=useCookies(["access_token"]);
+    const [cookies,setCookies]=useCookies(["access_token","userID"]);
     
 
     const handleHome=()=>{

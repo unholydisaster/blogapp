@@ -1,5 +1,5 @@
-import { HomeContainer, HomeWrapper, Paragraph } from "@/styles/homepage/homepage";
-import React, { useEffect, useState } from "react";
+import { HomeContainer, HomeWrapper, Paragraph } from "../styles/homepage/homepage";
+import React from "react";
 import fetch from "isomorphic-unfetch";
 
 

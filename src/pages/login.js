@@ -1,4 +1,4 @@
-import Login from "@/components/loginform"
+import Login from "../components/loginform"
 
 
 const LoginForm=()=> {
