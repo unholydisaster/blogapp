@@ -5,11 +5,11 @@ import axios from 'axios';
 import {useCookies} from "react-cookie"
 
 const Newnotes = () => {
-    const [cookies,setCookies]=useCookies(["userID"]);
+    const [cookies,setCookies]=useCookies(["access_token","userID"]);
     const [notes, setNotes]=useState({
         title:"",
         note:"",
-        userOwner:cookies.userID
+        userOwner:cookies.userID,
     })
     const router = useRouter()
 

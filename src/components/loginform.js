@@ -41,7 +41,7 @@ const Login = () => {
         alert("Successfully logedin")
         console.log(response)
         setCookies("access_token", response.data.token)
-        setCookies("userID", response.data.token)
+        setCookies("userID", response.data.userID)
         router.push('/')
       }catch(err){
         console.error(err)
