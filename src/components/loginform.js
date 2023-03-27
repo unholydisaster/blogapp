@@ -33,7 +33,7 @@ const Login = () => {
   
       try{
         const BASE_URL = process.env.BASE_URL;
-        const response = await axios.put(`${BASE_URL}/api/auth`,
+        const response = await axios.put(`${BASE_URL}api/auth`,
         {
           email, 
           password

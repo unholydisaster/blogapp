@@ -31,7 +31,7 @@ const HomePage=({notes})=>{
 
 export async function getServerSideProps(context) {
   const BASE_URL = process.env.BASE_URL;
-  const res = await fetch(`${BASE_URL}/api/notes`)
+  const res = await fetch(`${BASE_URL}api/notes`)
   const notesdata = await res.json()
   console.log(notesdata)
   if(!notesdata){
