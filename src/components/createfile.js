@@ -1,4 +1,56 @@
-import React from 'react';
+import { Editor, MarkdownContainer, Reviewarea } from "@/styles/createnote/newnote";
+import React, { useEffect } from "react";
+import { useState } from "react";
+
+
+const Newnotes = () => {
+  const [note, setNote] = useState({ markdown: "" });
+  const [data, setData] = useState([]);
+
+  const handleChange = (e) => {
+    setNote({
+      ...note,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+
+  useEffect(() => {
+    const regex = /^#\s+(.*)\s+!\[.*\]\((.*?)\)/m;
+    const match = regex.exec(note.markdown);
+
+    if (match) {
+      const heading = match[1]; // This is a heading
+      const imageUrl = match[2]; // https://amazon.img.sjddf.png
+
+      // Append the extracted heading and image URL to the original data array
+      setData([...data, { heading, imageUrl, markdown: note.markdown }]);
+    } else {
+      console.log("no data got matched");
+    }
+  }, []);
+
+
+  return (
+    <MarkdownContainer>
+      <Editor
+        id="textarea_id"
+        name= "markdown"
+        type= "text"
+        onChange={handleChange}
+      />
+      <Reviewarea>
+        {note.markdown}
+      </Reviewarea>
+    </MarkdownContainer>
+
+  );
+}
+
+export default Newnotes
+
+
+/*import React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -46,3 +98,4 @@ const Newnotes = () => {
 };
 
 export default Newnotes;
+*/

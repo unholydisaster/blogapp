@@ -28,6 +28,7 @@ export default async (req, res) => {
           email,
           password: hashedPassword,
         });
+        
         const response = await user.save();
         res.status(200).json(response);
       } catch (error) {

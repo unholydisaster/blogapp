@@ -52,10 +52,10 @@ const Login = () => {
     <FormContainer>
       <FormWrapper>
       <form onSubmit={handleLogin}>      
-        <FormTitle>Sing In</FormTitle>
+        <FormTitle>Log In</FormTitle>
         <FormInput type="email" placeholder="Email" value={email} onChange={handleEmailChange}/>
         <FormInput type="password" placeholder="Password" value={password} onChange={handlePasswordChange}/>
-        <FormButton>Sign In</FormButton>
+        <FormButton>Log In</FormButton>
        </form> 
       </FormWrapper>
     </FormContainer>

@@ -5,12 +5,12 @@ import dbConnect from "@/backend/utils/dbConnect";
 dbConnect();
 
 export default async(req, res)=> {
-  const { method } = req;
+  const { userID } = req.query;
 
   switch (method) {
     case "GET":
       try {
-        const user=await UserModel.findById(req.body.userID)
+        const user=await UserModel.findById(userID)
         res.json({savednotes:user?.savednotes});
 
       } catch (error){

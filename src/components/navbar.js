@@ -1,4 +1,4 @@
-import { AuthButtons, AuthContainers, BurgerLine, ItemContainer, LinkContainer, Links, Logo, LogoutButton, Navbar, NavItem, NavLinks, SearchArea, StyledBurger } from '@/styles/navbarstyles/navbar';
+import { AuthButtons, AuthContainers, BurgerLine, ItemContainer, LinkContainer, Links, Logo, LogoutButton, Navbar, NavItem, NavLinks, Searcharea, SearchArea, Searchbox, StyledBurger } from '@/styles/navbarstyles/navbar';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
@@ -49,8 +49,9 @@ const NavbarComponent = () => {
     };    
 
     return (
+      <>
       <Navbar>
-        <Logo href="/">Logo</Logo>
+        <Logo href="/">pic</Logo>
         <NavLinks open={open}>
           <LinkContainer>
           <ItemContainer>
@@ -71,15 +72,17 @@ const NavbarComponent = () => {
         </NavLinks>
         <StyledBurger onClick={handleBurgerClick}>
           <BurgerLine open={open} />
+                <BurgerLine open={open} />
           <BurgerLine open={open} />
-          <BurgerLine open={open} />
-        </StyledBurger>
+      </StyledBurger>
         <AuthContainers>
-          <SearchArea type="text" placeholder="Search" value={search} onChange={handleChange}/>
+          <Searchbox >
+            <Searcharea type="text" placeholder="Search" value={search} onChange={handleChange}/>
+          </Searchbox>
           {!cookies.access_token?(
             <>
-            <AuthButtons onClick={handleSignIn}>Login</AuthButtons>
-            <AuthButtons onClick={handleSignUp}>Sign Up</AuthButtons>
+            <AuthButtons onClick={handleSignIn}>LogIn</AuthButtons>
+            <AuthButtons onClick={handleSignUp}>SignUp</AuthButtons>
             </>
           ):(
             <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
@@ -87,6 +90,7 @@ const NavbarComponent = () => {
           
         </AuthContainers>
       </Navbar>
+      </>
     );
   };
   

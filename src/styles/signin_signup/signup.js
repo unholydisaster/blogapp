@@ -27,32 +27,37 @@ export const FormContainer = styled.div`
   }
 `;
 
+  //background-color:rgb(68,72,87);
 export const FormWrapper = styled.div`
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
+  background-color:rgb(30,31,38);
+  border:1px;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   padding: 30px;
-  max-width: 400px;
+  width: 25vw;
+  
 
   ${mq[1]}{
-    top:90px;
+    top:20vh;
     width:90vw;
     position:absolute;
-    left:2.5vw;
+    left:0.5rem;
+    border:1px solid rgba(51,125,140,1);
   }
   ${lq[1]}{
-    width:25vw;
+    width:40vw;
     height:xxxpx;
+    left:30vw;
   }
 `;
 
 export const FormTitle = styled.h2`
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size:40px;
+  font-weight: 900;
   margin-bottom: 20px;
-  color: linear-gradient(360deg, rgba(43,58,135,1) 61%, rgba(51,125,140,1) 100%);
+  color: white;
 
   ${lq[1]}{
     margin-bottom: 20px;
@@ -86,7 +91,7 @@ export const FormInput = styled.input`
 
 export const FormButton = styled.button`
   background: linear-gradient(360deg, rgba(43,58,135,1) 61%, rgba(51,125,140,1) 100%);
-  border: none;
+  border: 1px solid white;
   border-radius: 5px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
   color: #fff;

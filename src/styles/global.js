@@ -7,9 +7,11 @@ export const GlobalStyle=createGlobalStyle`{
         margin:0;
         padding:0;
         font-family: Arial, san-serif;
-        background-color:#0F1F37;
+        background: rgb(19,20,23);
+        opacity:100%;
+        overflow-x: hidden;
         ${mq[1]}{
-            background-color:white;
+            background-color:rgb(19,20,23);
         }
     }
 }`

@@ -30,3 +30,95 @@ ${mq[1]}{
 export const Paragraph=styled.p`
 font-size:16px;
 `
+
+export const GridContainer=styled.div`
+display:grid;
+grid-template-columns:repeat(3,0.1fr);
+position:absolute;
+width:auto;
+top:20vh;
+left:15vw;
+height:xxx;
+${mq[1]}{
+grid-template-columns:repeat(1,1fr);
+position:relative;
+width:100vw;
+top:20vh;
+left:0px;
+height:xxx
+}
+`
+export const NotesContainer=styled.div`
+position:relative;
+width:25vw;
+display:grid;
+padding:5px;
+left:0px;
+height:50vh;
+grid-gap:10px;
+background-color:rgb(68,72,87);
+border:1px solid rgba(51,125,140,1);
+border-radius:5px;
+h1{
+  font-size:25px;
+  top:0px;
+  position:relative;
+  color:white;
+  
+},
+p{
+  color:white;
+  font-size:16px;
+  width:inherit;
+
+}
+${mq[1]}{
+position:relative;
+width:auto;
+padding-top:0px;
+margin-bottom:5px;
+display:grid;
+left:0px;
+height:300px;
+grid-gap:10px;
+background-color:rgb(68,72,87);
+border:1px solid rgba(51,125,140,1);
+border-radius:5px;
+h1{
+  font-size:25px;
+  top:0px;
+  position:relative;
+  color:white;
+  
+},
+p{
+  color:white;
+  font-size:16px;
+  width:inherit;
+
+}
+}
+${lq[1]}{
+position:relative;
+display:grid;
+left:0px;
+height:50vh;
+grid-gap:10px;
+background-color:rgb(68,72,87);
+border:1px solid rgba(51,125,140,1);
+border-radius:5px;
+h1{
+  font-size:25px;
+  top:0px;
+  position:relative;
+  color:white;
+  
+},
+p{
+  color:white;
+  font-size:16px;
+  width:inherit;
+
+}
+}
+`
