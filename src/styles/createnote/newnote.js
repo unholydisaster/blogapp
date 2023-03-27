@@ -20,6 +20,7 @@ export const MarkdownContainer = styled.div`
 `;
 
 export const Editor = styled.textarea`
+  position:relative;
   top: 0;
   font-size: 18px;
   background: #1e2126;
@@ -31,6 +32,7 @@ export const Editor = styled.textarea`
 `;
 
 export const Reviewarea = styled(ReactMarkdown)`
+  position:relative;
   top: 0;
   padding: 20px;
   font-size: 18px;
@@ -38,16 +40,7 @@ export const Reviewarea = styled(ReactMarkdown)`
   border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
   max-width: 43vw;
-  max-height:90vh;
-  overflow-y:auto;
 
-  h1 {
-    color: black;
-    font-family: "Lucida Console", "Courier New", monoscope;
-  }
-  p {
-    color: #333333;
-    font-size: 21px;
   }
 
   img {
