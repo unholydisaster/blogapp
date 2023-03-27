@@ -9,7 +9,7 @@ import {
 
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import fetch from 'isomorphic-fetch'
+import fetch from "isomorphic-unfetch"
 
 const Register = () => {
     const router = useRouter()

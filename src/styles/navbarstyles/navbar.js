@@ -45,7 +45,7 @@ ${lq[1]}{
   position:fixed;
   width:12vw;
   z-index:20;
-  top:49px;
+  top:10vh;
 
   border:1px solid rgba(51,125,140,1);
 }

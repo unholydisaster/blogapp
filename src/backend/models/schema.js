@@ -14,6 +14,10 @@ const noteSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  imageUrl:{
+    type:String,
+    required:true,
+  },
   userOwner:{
     type:mongoose.Schema.Types.ObjectId,
     ref:"users"

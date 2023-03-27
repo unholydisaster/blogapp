@@ -10,11 +10,11 @@ export const MarkdownContainer = styled.div`
   position: absolute;
   top: 20vh;
   min-height: 90%;
-  width: 80vw;
-  left: 15vw;
+  width: 86vw;
+  left: 13vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 8px;
+  grid-template-columns:repeat(2,1fr);
+  grid-gap: 0px;
   border: 1px solid black;
   box-sizing: border-box;
 `;
@@ -24,9 +24,10 @@ export const Editor = styled.textarea`
   font-size: 18px;
   background: #1e2126;
   color: white;
-  border: 1px solid #c4c4c4;
+  border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
-  max-width: 40vw;
+  max-width: 43vw;
+  max-height:90vh;
 `;
 
 export const Reviewarea = styled(ReactMarkdown)`
@@ -34,12 +35,14 @@ export const Reviewarea = styled(ReactMarkdown)`
   padding: 20px;
   font-size: 18px;
   background: white;
-  border: 1px solid blue;
+  border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
-  max-width: 40vw;
+  max-width: 43vw;
+  max-height:90vh;
+  overflow-y:auto;
 
   h1 {
-    color: brown;
+    color: black;
     font-family: "Lucida Console", "Courier New", monoscope;
   }
   p {
@@ -48,7 +51,19 @@ export const Reviewarea = styled(ReactMarkdown)`
   }
 
   img {
-    width: 500px;
-    height: 400px;
+    position:relative;
+    width: 400px;
+    height: 350px;
   }
 `;
+
+export const SaveButton=styled.button`
+position:fixed;
+width:80px;
+top:91vh;
+background:rgb(71,207,115); 
+border:none;
+border-radius:5px;
+height: 35px;
+left:52vw;
+`
