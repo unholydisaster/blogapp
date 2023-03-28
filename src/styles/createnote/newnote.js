@@ -30,15 +30,15 @@ export const MarkdownContainer = styled.div`
 
 export const Editor = styled.textarea`
   position:relative;
-  top: 0;
+  resize: none;
   display:grid;
   font-size: 18px;
   background: #1e2126;
   color: white;
   border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
-  width: 43vw;
-  height:90vh;
+  min-width:50%;
+  height:inherit;
 `;
 
 export const Reviewarea = styled(ReactMarkdown)`
@@ -50,7 +50,8 @@ export const Reviewarea = styled(ReactMarkdown)`
   display:grid;
   border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
-  width: 43vw;
+  min-width: 50%;
+  height:100%;
 
   }
 
