@@ -1,20 +1,20 @@
 import { UserNotes } from "@/backend/models/schema";
-import { UserModel } from "@/backend/models/users";
 import dbConnect from "@/backend/utils/dbConnect";
 
 dbConnect();
 
 export default async(req, res)=> {
-  const { userID } = req.query;
+  const { title } = req.query;
 
   switch (method) {
     case "GET":
       try {
-        const user=await UserModel.findById(userID)
-        res.json({savednotes:user?.savednotes});
+        const note=await UserNotes.findById(title)
+        res.json({notebytitle:note.note});
+        console.log(note)
 
-      } catch (error){
-        res.status(400).json(error);
+      } catch{
+        res.status(400).json("an error occured");
       }
       break;
     default:
@@ -22,5 +22,4 @@ export default async(req, res)=> {
       break;
   }
 };
-
 
