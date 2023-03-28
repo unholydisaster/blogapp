@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 
@@ -8,16 +9,16 @@ export const H1 = styled.h1`
 
 
 export const MarkdownContainer = styled.div`
-  position: absolute;
+  position:relative;
   display: grid;
-  top: 20vh;
-  min-height:90vh;
+  top:10vh;
+  min-height:80vh;
   width: 86vw;
-  left: 13vw;
+  left:13vw;
   grid-template-columns:repeat(2,1fr);
   grid-gap: 0px;
   border: 1px solid black;
-  box-sizing: border-box;
+
 `;
 
 export const Editor = styled.textarea`
