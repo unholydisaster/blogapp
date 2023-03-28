@@ -7,7 +7,7 @@ export const H1 = styled.h1`
 `;
 
 export const MarkdownContainer = styled.div`
-  position: absolute;
+  position: relative;
   top: 20vh;
   min-height: 90%;
   width: 86vw;
@@ -20,7 +20,7 @@ export const MarkdownContainer = styled.div`
 `;
 
 export const Editor = styled.textarea`
-  position:relative;
+  position:absolute;
   top: 0;
   font-size: 18px;
   background: #1e2126;
@@ -32,7 +32,7 @@ export const Editor = styled.textarea`
 `;
 
 export const Reviewarea = styled(ReactMarkdown)`
-  position:relative;
+  position:absolute;
   top: 0;
   padding: 20px;
   font-size: 18px;
@@ -44,7 +44,6 @@ export const Reviewarea = styled(ReactMarkdown)`
   }
 
   img {
-    position:relative;
     width: 400px;
     height: 350px;
   }
