@@ -8,9 +8,9 @@ export const H1 = styled.h1`
 
 export const Container = styled.form`
   position:relative;
-  display: grid;
+  display:flex;
   top:10vh;
-  min-height:80vh;
+  height:80vh;
   width: 86vw;
   left:13vw;
   border: 1px solid black;
@@ -20,7 +20,7 @@ export const Container = styled.form`
 export const MarkdownContainer = styled.div`
   position:absolute;
   display: grid;
-  min-height:inherit;
+  height:inherit;
   width:inherit;
   grid-template-columns:repeat(2,1fr);
   grid-gap: 0px;
@@ -37,8 +37,8 @@ export const Editor = styled.textarea`
   color: white;
   border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
-  max-width: 43vw;
-  max-height:90vh;
+  width: 43vw;
+  height:90vh;
 `;
 
 export const Reviewarea = styled(ReactMarkdown)`
@@ -50,7 +50,7 @@ export const Reviewarea = styled(ReactMarkdown)`
   display:grid;
   border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
-  max-width: 43vw;
+  width: 43vw;
 
   }
 
