@@ -6,11 +6,11 @@ export const H1 = styled.h1`
   left: 35%;
 `;
 
-export const Container = styled.form`
+export const Container = styled.div`
   position:relative;
   display:flex;
   top:10vh;
-  height:80vh;
+  min-height:80vh;
   width: 86vw;
   left:13vw;
   border: 1px solid black;
@@ -20,8 +20,8 @@ export const Container = styled.form`
 export const MarkdownContainer = styled.div`
   position:absolute;
   display: grid;
-  height:inherit;
-  width:inherit;
+  height:100%;
+  width:100%;
   grid-template-columns:repeat(2,1fr);
   grid-gap: 0px;
   border: 1px solid black;
