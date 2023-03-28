@@ -71,14 +71,12 @@ ${lq[1]}{
 position:relative;
 top:15vh;
 display:flex;
-border-radius:10px;
 justify-content: start
 align-items: start;    
-width:10vw;
+width:100%;
 font-size:14px;
-left:10px;
 backgroud-color:rgb(30,31,38);
-border:1px solid rgba(51,125,140,1);
+
 }
 
   ${mq[1]}{
@@ -99,7 +97,7 @@ export const Links = styled.div`
   position:relative;
   color: white;
   font-size:16px;
-  left:15px;
+  left:5vh;
 
   ${mq[1]}{
     font-size:20px;
@@ -162,11 +160,13 @@ ${lq[1]}{
   left:0%;
   background-color:rgb(30,31,38);
   z-index:20;
+  border:1px solid rgba(51,125,140,1);
 }
 ${mq[1]}{
   height:400px;
   width:25vw;
   left:0px;
+  
 }
 `;
 
