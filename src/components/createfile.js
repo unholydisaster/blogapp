@@ -1,4 +1,4 @@
-import { Editor, MarkdownContainer, Reviewarea, SaveButton } from "@/styles/createnote/newnote";
+import { Container, Editor, MarkdownContainer, Reviewarea, SaveButton } from "@/styles/createnote/newnote";
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -43,7 +43,7 @@ const Newnotes = () => {
   }
 
   return (
-    <form onSubmit={Submit}>
+    <Container onSubmit={Submit}>
     <MarkdownContainer>
       <Editor
         id="textarea_id"
@@ -56,7 +56,7 @@ const Newnotes = () => {
       </Reviewarea>
     </MarkdownContainer>
     <SaveButton>Save</SaveButton>
-    </form>
+    </Container>
   );
 }
 
