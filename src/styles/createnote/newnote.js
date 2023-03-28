@@ -6,13 +6,14 @@ export const H1 = styled.h1`
   left: 35%;
 `;
 
+
 export const MarkdownContainer = styled.div`
-  position: relative;
+  position: absolute;
+  display: grid;
   top: 20vh;
-  min-height: 90%;
+  min-height:90vh;
   width: 86vw;
   left: 13vw;
-  display: grid;
   grid-template-columns:repeat(2,1fr);
   grid-gap: 0px;
   border: 1px solid black;
@@ -20,8 +21,9 @@ export const MarkdownContainer = styled.div`
 `;
 
 export const Editor = styled.textarea`
-  position:absolute;
+  position:relative;
   top: 0;
+  display:grid;
   font-size: 18px;
   background: #1e2126;
   color: white;
@@ -32,11 +34,12 @@ export const Editor = styled.textarea`
 `;
 
 export const Reviewarea = styled(ReactMarkdown)`
-  position:absolute;
+  position:relative;
   top: 0;
   padding: 20px;
   font-size: 18px;
   background: white;
+  display:grid;
   border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
   max-width: 43vw;
@@ -44,6 +47,7 @@ export const Reviewarea = styled(ReactMarkdown)`
   }
 
   img {
+    position:relative;
     width: 400px;
     height: 350px;
   }
