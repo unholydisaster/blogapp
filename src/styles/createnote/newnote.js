@@ -9,66 +9,57 @@ export const H1 = styled.h1`
 export const Container = styled.div`
   position:relative;
   display:flex;
-  top:10vh;
-  min-height:80vh;
-  width: 86vw;
-  left:13vw;
-  border: 1px solid black;
-
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  width: 100vw;
 `;
 
 export const MarkdownContainer = styled.div`
-  position:absolute;
   display: grid;
-  height:100%;
-  width:100%;
-  grid-template-columns:repeat(2,1fr);
-  grid-gap: 0px;
-  border: 1px solid black;
-
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 20px;
+  width: 90%;
+  max-width: 800px;
 `;
 
 export const Editor = styled.textarea`
-  position:relative;
   resize: none;
-  display:grid;
-  font-size: 18px;
+  font-size: 1.2rem;
   background: #1e2126;
   color: white;
   border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
-  min-width:50%;
-  height:inherit;
+  min-height: 200px;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
 `;
 
 export const Reviewarea = styled(ReactMarkdown)`
-  position:relative;
-  top: 0;
   padding: 20px;
-  font-size: 18px;
+  font-size: 1.2rem;
   background: white;
-  display:grid;
   border: 1px solid rgba(51,125,140,1);
   box-sizing: border-box;
-  min-width: 50%;
-  height:100%;
-
-  }
-
+  min-height: 200px;
+  width: 100%;
+  margin: 0;
   img {
-    position:relative;
-    width: 400px;
-    height: 350px;
+    max-width: 100%;
+    height: auto;
   }
 `;
 
 export const SaveButton=styled.button`
-position:fixed;
-width:80px;
-top:91vh;
-background:rgb(71,207,115); 
-border:none;
-border-radius:5px;
-height: 35px;
-left:52vw;
+  width: 80px;
+  background:rgb(71,207,115); 
+  border:none;
+  border-radius:5px;
+  height: 35px;
+  margin-top: 20px;
+`;
+
 `
