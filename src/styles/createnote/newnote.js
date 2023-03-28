@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 
@@ -7,14 +6,22 @@ export const H1 = styled.h1`
   left: 35%;
 `;
 
-
-export const MarkdownContainer = styled.div`
+export const Container = styled.form`
   position:relative;
   display: grid;
   top:10vh;
   min-height:80vh;
   width: 86vw;
   left:13vw;
+  border: 1px solid black;
+
+`;
+
+export const MarkdownContainer = styled.div`
+  position:absolute;
+  display: grid;
+  min-height:inherit;
+  width:inherit;
   grid-template-columns:repeat(2,1fr);
   grid-gap: 0px;
   border: 1px solid black;
