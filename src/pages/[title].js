@@ -20,7 +20,7 @@ const NotesByTitle=({notes})=>{
 
 export async function getServerSideProps({ query }) {
   // Get the value of the "id" query parameter
-    const title  = query.id;
+    const title  = query.title;
   // Make a fetch request using the "id" parameter
     const BASE_URL = process.env.BASE_URL;
 
