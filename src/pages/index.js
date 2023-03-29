@@ -1,12 +1,12 @@
 import React from "react"
 import fetch from "isomorphic-unfetch"
-import { GridContainer, NotesContainer } from "@/styles/homepage/homepage"
+import { GridContainer, Links, NotesContainer } from "@/styles/homepage/homepage"
 import Image from "next/legacy/image"
 import Link from "next/link"
 
 
 const HomePage=({notes})=>{
-  const BASE_URL = process.env.BASE_URL;
+  
   return(
     <>
     <GridContainer>
@@ -14,9 +14,9 @@ const HomePage=({notes})=>{
         return(
         <ul key={notes._id}>
         <NotesContainer>
-          <Link href={`/${notes.title}`}>
+          <Links href={`/${notes.title}`}>
           <h1>{notes.title}</h1>
-          </Link>
+          </Links>
           <Image
           src={notes.imageUrl}
           height={200}

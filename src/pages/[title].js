@@ -1,23 +1,41 @@
-import React from "react"
-import fetch from "isomorphic-unfetch"
-import ReactMarkdown from "react-markdown";
-import { withApiUrl } from "next-api-url";
+import React from "react";
+import fetch from "isomorphic-unfetch";
+import { Article, ArticleContainer } from "@/styles/articles/articlepage";
 
-export default function NotesByTitle({note}){
-  
+export default function NotesByTitle({ note }) {
   return(
-    <>
-      <ReactMarkdown>{note}</ReactMarkdown>
-    </>
+    <ArticleContainer>
+      <Article>{note}</Article>
+    </ArticleContainer>
   )
 }
 
-export const getServerSideProps = withApiUrl(async ({query:{title}}, url) =>{
-  try {
-    const response = await fetch(`${url}/notes/${title}`);
-    const data = await response.json();
-    console.log("Server response:", data);
+export async function getStaticPaths() {
+  const BASE_URL = process.env.BASE_URL;
+  const res = await fetch(`${BASE_URL}api/notes`)
+  
+  const data = await res.json();
 
+  const paths = data.map((blog) => ({
+    params: {
+      title: blog.title,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { title } = params;
+
+  try {
+    const BASE_URL = process.env.BASE_URL;
+    const response = await fetch(`${BASE_URL}api/notes/${title}`);
+    const data = await response.json();
+    
     return {
       props: {
         note: data.note,
@@ -31,5 +49,6 @@ export const getServerSideProps = withApiUrl(async ({query:{title}}, url) =>{
       },
     };
   }
-});
+}
+
   

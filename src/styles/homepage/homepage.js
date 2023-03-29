@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { lq, mq } from '../signin_signup/signup';
-
+import Link from "next/link"
 
 export const HomeContainer = styled.div`
   position:absolute;
@@ -44,7 +44,7 @@ grid-template-columns:repeat(1, minmax(100vw,1fr));
 position:absolute;
 width:100vw;
 top:20vh;
-left:0px;
+left:2vw;
 height:xxx;
 }
 `
@@ -97,4 +97,8 @@ p{
 
 }
 }
+`
+export const Links=styled(Link)`
+text-decoration: none;
+
 `
