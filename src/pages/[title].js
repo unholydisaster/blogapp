@@ -1,39 +1,35 @@
 import React from "react"
 import fetch from "isomorphic-unfetch"
 import ReactMarkdown from "react-markdown";
+import { withApiUrl } from "next-api-url";
 
-
-const NotesByTitle=({notes})=>{
+export default function NotesByTitle({notes}){
   
   return(
     <>
-      {notes.map((notes)=>{
+      {notes.map((items)=>{
         return(
-        <ul key={notes.id}>
-          <ReactMarkdown>{notes.note}</ReactMarkdown>
-        </ul>
+        <div key={items.id}>
+          <ReactMarkdown>{items.note}</ReactMarkdown>
+        </div>
         )
       })}
     </>
   )
 }
 
-export async function getServerSideProps({ query }) {
-  // Get the value of the "id" query parameter
-    const title  = query.title;
-  // Make a fetch request using the "id" parameter
-    const BASE_URL = process.env.BASE_URL;
 
-    const res = await fetch(`${BASE_URL}api/getnotesId/${title}`)
-  
-  // Parse the response body as JSON
-    const data = await res.json();
-  
-  return{
-      props:{
-          notes:data
-      }
-  }
-}
 
-export default NotesByTitle
+export const getServerSideProps = withApiUrl(async ({query:{title}}, url) =>{
+  // get the current environment
+  const {data}= await (await fetch(`${url}/notes/${title}`)).json();
+       // extract the data
+      
+      return {
+          props: {
+              notes:data
+          },
+      };
+    
+  })
+  
