@@ -18,16 +18,20 @@ const NotesByTitle=({notes})=>{
   )
 }
 
-export async function getServerSideProps(context) {
-  const BASE_URL = process.env.BASE_URL;
-   const { title } = context.query;
-  const res = await fetch(`${BASE_URL}api/getnotesId/${title}`).json()
+export async function getServerSideProps({ query }) {
+  // Get the value of the "id" query parameter
+    const title  = query.id;
+  // Make a fetch request using the "id" parameter
+    const BASE_URL = process.env.BASE_URL;
 
-  console.log(res)
-
+    const res = await fetch(`${BASE_URL}api/getnotesId/${title}`)
+  
+  // Parse the response body as JSON
+    const data = await res.json();
+  
   return{
       props:{
-          notes:res
+          notes:data
       }
   }
 }
