@@ -22,7 +22,7 @@ export default function NotesByTitle({notes}){
 
 export const getServerSideProps = withApiUrl(async ({query:{title}}, url) =>{
   // get the current environment
-  const {data}= await (await fetch(`${url}/notes/${title}`)).json();
+  const {data}= await (await fetch(`${url}/getnotesId/${title}`)).json();
        // extract the data
       
       return {
