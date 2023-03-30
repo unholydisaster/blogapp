@@ -6,18 +6,18 @@ export const ArticleContainer = styled.div`
   position:absolute;
   top:10vh;
   background:white;
+  display: grid;
+  top:20vh;
+  grid-template-columns:85vw;
   left:13vw;
-  width:85vw;
   height:xxx;
   ${mq[1]}{
     position:absolute;
     top:10vh;
     background:white;
-    display:flex;
-    width:100vw;
+    grid-template-columns:100vw;
     padding:10px;
     height:xxx;
-    left:-2vw;
   }
 `
 
@@ -25,7 +25,8 @@ export const Article = styled(ReactMarkdown)`
   padding:10px;
   font-size: 1.2rem;
   background:inherit;
-  width:inherit;
+  grid-column: 1;
+  width:100%;
   margin: 0;
 
 
@@ -39,7 +40,8 @@ export const Article = styled(ReactMarkdown)`
     padding:10px;
     font-size: 1.2rem;
     background:inherit;
-    width:auto;
+    grid-column: 1;
+    width:100%;
     margin: 0;
   
   
