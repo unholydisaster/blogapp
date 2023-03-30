@@ -6,8 +6,6 @@ export const ArticleContainer = styled.div`
   position:absolute;
   top:20vh;
   background:white;
-  display:grid;
-  display:
   top:20vh;
   width:85vw;
   left:13vw;

@@ -1,12 +1,10 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
-import { Article, ArticleContainer } from "@/styles/articles/articlepage";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function NotesByTitle({ note }) {
   return(
-    <ArticleContainer>
-      <Article>{note}</Article>
-    </ArticleContainer>
+  <ReactMarkdown>{note}</ReactMarkdown>
   )
 }
 
