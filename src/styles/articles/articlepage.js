@@ -6,18 +6,12 @@ export const ArticleContainer = styled.div`
   position:absolute;
   top:20vh;
   background:white;
-  display:flex;
+  display:grid;
+  display:
   top:20vh;
   width:85vw;
   left:13vw;
   height:xxx;
-  ${mq[1]}{
-    position:absolute;
-    top:20vh;
-    background:white;
-    left:-5vw;
-    height:xxx;
-  }
 `
 
 export const Article = styled(ReactMarkdown)`
@@ -28,14 +22,5 @@ export const Article = styled(ReactMarkdown)`
   img {
     width:60vw;
     height: auto;
-  }
-  ${mq[1]}{
-    padding:10px;
-    font-size: 18px;
-    background:white;
-    img {
-      width:60vw;
-      height: auto;
-    }
   }
 `;
