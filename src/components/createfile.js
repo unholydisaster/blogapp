@@ -45,19 +45,19 @@ const Newnotes = () => {
   return (
     <>
     <Container>
-    <form onSubmit={Submit}>
+    <form>
     <Editor
       id="textarea_id"
       name= "markdown"
       type= "text"
       onChange={handleChange}
-    />
-    <SaveButton>Save</SaveButton>      
+    />      
     </form>
     <Reviewarea>
       {note.markdown}
     </Reviewarea>    
-    </Container>    
+    </Container>
+    <SaveButton onSubmit={Submit}>Save</SaveButton>    
     </>
   );
 }
