@@ -4,19 +4,18 @@ import ReactMarkdown from "react-markdown";
 
 export const ArticleContainer = styled.div`
   position:absolute;
-  top:10vh;
-  background:white;
-  display: grid;
   top:20vh;
-  grid-template-columns:85vw;
+  background:white;
+  display:flex;
+  top:20vh;
+  width:85vw;
   left:13vw;
   height:xxx;
   ${mq[1]}{
     position:absolute;
-    top:10vh;
+    top:20vh;
     background:white;
-    grid-template-columns:100vw;
-    left:-10px;
+    left:-5vw;
     height:xxx;
   }
 `
@@ -24,22 +23,16 @@ export const ArticleContainer = styled.div`
 export const Article = styled(ReactMarkdown)`
   padding:10px;
   font-size: 18px;
-  background:inherit;
-  grid-column: 1;
   width:100%;
 
   img {
     width:60vw;
-    position:relative;
     height: auto;
   }
   ${mq[1]}{
     padding:10px;
     font-size: 18px;
     background:white;
-    display:grid;
-    grid-column: 1;
-    width:100vw;
     img {
       width:60vw;
       height: auto;
