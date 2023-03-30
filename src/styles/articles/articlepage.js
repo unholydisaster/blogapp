@@ -18,6 +18,7 @@ export const Article = styled(ReactMarkdown)`
   padding:10px;
   font-size: 18px;
   width:100%;
+  word-wrap: break-word;
 
   img {
     width:60vw;
