@@ -7,46 +7,39 @@ export const H1 = styled.h1`
 `;
 
 export const Container = styled.div`
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  width: 100vw;
-`;
-
-export const MarkdownContainer = styled.div`
+  position:absolute;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, auto);
-  grid-gap: 20px;
-  width: 90%;
-  max-width: 800px;
+  top:20vh;
+  grid-template-columns: 40vw 40vw;
+  grid-column-gap: 20px;
+  height:100%;
+  left:15vw;
+
+
 `;
 
 export const Editor = styled.textarea`
-  resize: none;
   font-size: 1.2rem;
   background: #1e2126;
   color: white;
+  padding:10px;
   border: 1px solid rgba(51,125,140,1);
-  box-sizing: border-box;
-  min-height: 200px;
+  grid-column: 1 / 2;
+  resize:none;
+  height:100vh;
   width: 100%;
-  padding: 10px;
-  margin: 0;
+
 `;
 
 export const Reviewarea = styled(ReactMarkdown)`
-  padding: 20px;
+  padding:10px;
   font-size: 1.2rem;
   background: white;
   border: 1px solid rgba(51,125,140,1);
-  box-sizing: border-box;
-  min-height: 200px;
+  grid-column: 2 / 3;
   width: 100%;
-  margin: 0;
+  height:100vh;
+  overflow-y: auto; 
   img {
     max-width: 100%;
     height: auto;
@@ -54,11 +47,16 @@ export const Reviewarea = styled(ReactMarkdown)`
 `;
 
 export const SaveButton=styled.button`
+  position:fixed;
   width: 80px;
-  background:rgb(71,207,115); 
+  background: linear-gradient(360deg, rgba(43,58,135,1) 61%, rgba(51,125,140,1) 100%); 
+  left:15vw;
   border:none;
   border-radius:5px;
+  font-weight:600;
   height: 35px;
+  top:88vh;
+  color:white;
   margin-top: 20px;
 `;
 
