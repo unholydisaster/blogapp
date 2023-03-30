@@ -51,39 +51,19 @@ const Newnotes = () => {
       name= "markdown"
       type= "text"
       onChange={handleChange}
-    />      
+    />
+    <SaveButton>Save</SaveButton>      
     </form>
     <Reviewarea>
       {note.markdown}
     </Reviewarea>    
-    </Container>
-    <SaveButton>Save</SaveButton>    
+    </Container>    
     </>
   );
 }
 
 export default Newnotes;
-/*
-return (
-  <Container>
-  <form onSubmit={Submit}>
-  <MarkdownContainer>
-    <Editor
-      id="textarea_id"
-      name= "markdown"
-      type= "text"
-      onChange={handleChange}
-    />
-    <Reviewarea>
-      {note.markdown}
-    </Reviewarea>
-  </MarkdownContainer>
-  <SaveButton>Save</SaveButton>
-  </form>
-  </Container>
-);
-}
-*/
+
 
 
 
