@@ -16,40 +16,33 @@ export const ArticleContainer = styled.div`
     top:10vh;
     background:white;
     grid-template-columns:100vw;
-    padding:10px;
+    left:-10px;
     height:xxx;
   }
 `
 
 export const Article = styled(ReactMarkdown)`
   padding:10px;
-  font-size: 1.2rem;
+  font-size: 18px;
   background:inherit;
   grid-column: 1;
   width:100%;
-  margin: 0;
-
 
   img {
-    max-width:60vw;
+    width:60vw;
     position:relative;
     height: auto;
-    left:10vw;
   }
   ${mq[1]}{
     padding:10px;
-    font-size: 1.2rem;
-    background:inherit;
+    font-size: 18px;
+    background:white;
+    display:grid;
     grid-column: 1;
-    width:100%;
-    margin: 0;
-  
-  
+    width:100vw;
     img {
-      width:60%;
-      position:relative;
+      width:60vw;
       height: auto;
-      left:10vw;
     }
   }
 `;
