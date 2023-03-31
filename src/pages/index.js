@@ -14,15 +14,15 @@ const HomePage=({notes})=>{
         return(
         <ul key={notes._id}>
         <NotesContainer>
-          <Links href={`/${notes.title}`}>
-          <h1>{notes.title}</h1>
-          </Links>
           <Image
           src={notes.imageUrl}
           height={200}
           width={250}
           alt={notes.title}
         />
+        <Links href={`/${notes.title}`}>
+          <h1>{notes.title}</h1>
+        </Links>
         </NotesContainer> 
         </ul>
         )

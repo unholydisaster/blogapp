@@ -40,29 +40,25 @@ top:20vh;
 left:12vw;
 height:xxx;
 ${mq[1]}{
-grid-template-columns:95vw;
-position:absolute;
-width:100vw;
-top:20vh;
-left:2.5vw;
+grid-template-columns:repeat(1, 1fr);
+position:relative;
+width:95vw;
+top:10vh;
+left:-2.5vw;
 height:xxx;
 }
 `
 export const NotesContainer=styled.div`
 ${mq[1]}{
 position:relative;
-width:inherit;
-padding-top:0px;
-margin-bottom:5px;
+width:100%;
 display:grid;
-grid-column: 1;
-left:0px;
+left:0vw;
+grid-template-columns: 1fr;
 min-height:50vh;
-background: linear-gradient(360deg, rgba(43,58,135,1) 61%, rgba(51,125,140,1) 100%);
-border:1px solid rgba(51,125,140,1);
-border-radius:5px;
+background:inherit; 
 h1{
-  font-size:25px;
+  font-size:28px;
   top:0px;
   position:relative;
   color:white;
