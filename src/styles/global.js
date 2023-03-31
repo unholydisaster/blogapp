@@ -25,6 +25,7 @@ export const GlobalStyle=createGlobalStyle`{
     body{
         margin:0;
         padding:0;
+        position:relative;
         font-family: Arial, san-serif;
         background: rgb(19,20,23);
         opacity:100%;

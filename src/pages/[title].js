@@ -1,10 +1,19 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { useState } from "react";
+import { useEffect } from "react";
+import { ArticleContainer,Article } from "@/styles/articles/articlepage";
+import CodeBlock from "@/styles/codecontainers/highlighter";
+import remarkGfm from "remark-gfm";
 
 export default function NotesByTitle({ note }) {
   return(
-  <ReactMarkdown>{note}</ReactMarkdown>
+    <ArticleContainer>
+    <Article components={CodeBlock} remarkPlugins={[remarkGfm]}>
+    {note}
+    </Article>
+    </ArticleContainer>
+
   )
 }
 

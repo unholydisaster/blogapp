@@ -5,6 +5,7 @@ import { lq, mq } from '../signin_signup/signup';
 
 export const Navbar = styled.nav`
   background: rgb(19,20,23);
+
   display:flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +15,7 @@ export const Navbar = styled.nav`
   ${mq[1]}{
     background-color:rgb(19,20,23);
     width:100vw;
+    position:fixed;
     padding:20px;
     height:20px;
     z-index:999;
@@ -32,7 +34,7 @@ export const Logo = styled(Link)`
   ${mq[1]}{
     position:absolute;
     left:0;
-    top:15px;
+    top:10px;
     font-size:26px;
     style:none;
   }
@@ -54,7 +56,7 @@ ${lq[1]}{
         transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-160%)'};
         flex-direction: column;
         align-items: center;
-        position:absolute;
+        position:fixed;
         border:1px solid rgba(51,125,140,1);
         left:0;
         top:60px;
@@ -113,7 +115,7 @@ ${mq[0,1]}{
   width: 1.8rem;
   height: 1.8rem;
   position:absolute;
-  top: 15px;
+  top: 10px;
   left:12vw;
   display: flex;
   justify-content: space-around;
@@ -211,7 +213,7 @@ grid-gap:20px;
 align-items: center;
 ${mq[1]}{
 position:absolute;
-right:3vw;
+right:9vw;
 display:grid;
 grid-template-columns: repeat(3, 1fr);
 width:60vw; 
@@ -237,8 +239,8 @@ export const AuthButtons = styled.button`
     background: linear-gradient(360deg, rgba(43,58,135,1) 61%, rgba(51,125,140,1) 100%);
     border:1px solid rgba(51,125,140,1);
     border-radius:5px;  
-    width:25vw;
-    height:35px;
+    width:20vw;
+    height:30px;
     text-align:center;
     font-size:95%;
     font-weight:600;
@@ -277,11 +279,12 @@ ${lq[1]}{
     backgroud-color:rgb(37,40,48);
     border: none;
     border-radius:5px;  
-    width:30vw;
-    height:2rem;
+    width:28vw;
+    position:relative;
+    height:1.8rem;
     color:white;
     text-align:center;
-    top:10px;
+    top:4px;
     font-size:16px;
     font-weight:700;
     
