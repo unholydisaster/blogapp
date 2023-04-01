@@ -99,3 +99,7 @@ export const Links=styled(Link)`
 text-decoration: none;
 
 `
+export const LinksImage=styled(Link)`
+text-decoration: none;
+width:100%;
+`

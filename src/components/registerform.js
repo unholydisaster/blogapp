@@ -9,7 +9,7 @@ import {
 
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import fetch from "isomorphic-unfetch"
+import axios from 'axios';
 
 const Register = () => {
     const router = useRouter()
@@ -37,16 +37,13 @@ const Register = () => {
   async function handleSubmit(event){
       event.preventDefault();
       // Make sure the password and confirm password match
+      try{
         const BASE_URL = process.env.BASE_URL;
-        const result = await fetch(`${BASE_URL}api/auth`,{
-          body: JSON.stringify({username,email,password}),
-          headers: {
-            "Content-Type": "application/json",
-          },
-          method: "POST"
-        }).then((res)=>res.json())
-        
-          router.push('/login'); // Navigate to login page
+        await axios.post(`${BASE_URL}api/auth`,{username,email,password})
+        router.push('/login'); // Navigate to login page
+      }catch(err){
+       alert("an error occured, check the details once again")
+      }
     };
   
   

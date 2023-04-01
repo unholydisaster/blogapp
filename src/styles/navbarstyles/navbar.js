@@ -3,21 +3,20 @@ import styled from 'styled-components';
 import { lq, mq } from '../signin_signup/signup';
 
 
-export const Navbar = styled.nav`
+export const Navbar = styled.div`
+ ${lq[2]}{
   background: rgb(19,20,23);
-
-  display:flex;
   justify-content: space-between;
   align-items: center;
   width:100vw;
   height:50px;
-  
+}
   ${mq[1]}{
     background-color:rgb(19,20,23);
     width:100vw;
     position:fixed;
     padding:20px;
-    height:20px;
+    height:60px;
     z-index:999;
     
   }
@@ -34,7 +33,6 @@ export const Logo = styled(Link)`
   ${mq[1]}{
     position:absolute;
     left:0;
-    top:10px;
     font-size:26px;
     style:none;
   }
@@ -112,10 +110,9 @@ export const Links = styled.div`
 
 export const StyledBurger = styled.div`
 ${mq[0,1]}{
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 50px;
+  height: 30px;
   position:absolute;
-  top: 10px;
   left:12vw;
   display: flex;
   justify-content: space-around;
@@ -128,8 +125,8 @@ ${mq[0,1]}{
 
 export const BurgerLine = styled.div`
 ${mq[1]}{
-width: 1.8rem;
-height: 0.25rem;
+width: 30px;
+height: 5px;
 border-radius: 10px;
 background-color: ${({open}) => open ? 'white' : 'white'};
 font-size: 20px;
@@ -230,7 +227,7 @@ export const AuthButtons = styled.button`
     width:90px;
     color:white;
     position:relative;
-    top:3px;
+    top:5px;
     height:35px;
     text-align:center;
     font-size:16px;
@@ -242,10 +239,10 @@ export const AuthButtons = styled.button`
     width:20vw;
     height:30px;
     text-align:center;
-    font-size:95%;
+    font-size:85%;
     font-weight:600;
     position:relative;
-    top:3px;
+    top:0px;
   }
 `;
 
@@ -259,7 +256,6 @@ background:rgb(71,207,115);
     height:35px;
     text-align:center;
     position:absolute;
-    left:80%;
     top:0px;
     font-size:16px;
     font-weight:700;
@@ -268,12 +264,14 @@ background:rgb(71,207,115);
 
 export const Searchbox = styled.div`
 ${lq[1]}{
+  position:relative;
   backgroud-color:rgb(37,40,48);
   border-radius:5px;  
   width:60vw;
   height:35px;
   text-align:center;
   font-size:10px;
+  top:5px;
 }
   ${mq[1]}{
     backgroud-color:rgb(37,40,48);
@@ -281,10 +279,10 @@ ${lq[1]}{
     border-radius:5px;  
     width:28vw;
     position:relative;
-    height:1.8rem;
+    height:30px;
     color:white;
     text-align:center;
-    top:4px;
+    top:0px;
     font-size:16px;
     font-weight:700;
     

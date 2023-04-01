@@ -3,19 +3,28 @@ import ReactMarkdown from "react-markdown";
 
 export const H1 = styled.h1`
   position: absolute;
-  left: 35%;
+  left: 10vh%;
+  color:white;
+`;
+
+export const Alert = styled.div`
+  position:relative;
+  display: grid;
+  top:20vh;
+  grid-template-columns:1fr;
+  height:100%;
+  left:15vw;
+  width:85vw;
 `;
 
 export const Container = styled.div`
-  position:absolute;
+  position:relative;
   display: grid;
   top:20vh;
   grid-template-columns: 40vw 40vw;
   grid-column-gap: 20px;
   height:100%;
   left:15vw;
-
-
 `;
 
 export const Editor = styled.textarea`
@@ -32,7 +41,6 @@ export const Editor = styled.textarea`
 `;
 
 export const Reviewarea = styled(ReactMarkdown)`
-  padding:10px;
   font-size: 1.2rem;
   background: white;
   border: 1px solid rgba(51,125,140,1);

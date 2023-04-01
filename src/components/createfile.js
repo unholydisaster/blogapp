@@ -1,4 +1,4 @@
-import { Container, Editor, MarkdownContainer, Reviewarea, SaveButton } from "@/styles/createnote/newnote";
+import { Alert, Container, Editor, H1, MarkdownContainer, Reviewarea, SaveButton } from "@/styles/createnote/newnote";
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -44,6 +44,12 @@ const Newnotes = () => {
 
   return (
     <>
+    {!cookies.access_token?(
+      <Alert>
+       <H1>you have to be logged in to access this page, contact support for more information</H1>
+      </Alert>
+    ):(
+      <>
     <Container>
     <form onSubmit={Submit}>
     <Editor
@@ -57,7 +63,9 @@ const Newnotes = () => {
       {note.markdown}
     </Reviewarea>    
     </Container>
-    <SaveButton onClick={Submit}>Save</SaveButton>    
+    <SaveButton onClick={Submit}>Save</SaveButton>
+    </>
+    )}    
     </>
   );
 }

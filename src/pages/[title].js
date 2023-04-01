@@ -1,7 +1,6 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
-import { useState } from "react";
-import { useEffect } from "react";
+
 import { ArticleContainer,Article } from "@/styles/articles/articlepage";
 import CodeBlock from "@/styles/codecontainers/highlighter";
 import remarkGfm from "remark-gfm";
@@ -17,25 +16,8 @@ export default function NotesByTitle({ note }) {
   )
 }
 
-export async function getStaticPaths() {
-  const BASE_URL = process.env.BASE_URL;
-  const res = await fetch(`${BASE_URL}api/notes`)
-  
-  const data = await res.json();
 
-  const paths = data.map((blog) => ({
-    params: {
-      title: blog.title,
-    },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { title } = params;
 
   try {

@@ -30,7 +30,12 @@ export default async (req, res) => {
         });
         
         const response = await user.save();
+                
+        if(response){
+          console.log("user successfully create")
+        }
         res.status(200).json(response);
+
       } catch (error) {
         console.log(error);
         res.status(400).json("an error occured");

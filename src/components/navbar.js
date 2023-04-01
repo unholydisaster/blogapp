@@ -15,8 +15,8 @@ const NavbarComponent = () => {
       router.push("/")
     }
 
-    const handleContact=()=>{
-      router.push("/")
+    const handlePublish=()=>{
+      router.push("/newnote")
     }
     const handleHelp=()=>{
       router.push("/")
@@ -85,7 +85,10 @@ const NavbarComponent = () => {
             <AuthButtons onClick={handleSignUp}>SignUp</AuthButtons>
             </>
           ):(
+            <>
             <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+            <AuthButtons onClick={handlePublish}>Publish</AuthButtons>            
+            </>
           )}
           
         </AuthContainers>

@@ -1,6 +1,6 @@
 import React from "react"
 import fetch from "isomorphic-unfetch"
-import { GridContainer, Links, NotesContainer } from "@/styles/homepage/homepage"
+import { GridContainer, Links, LinksImage, NotesContainer } from "@/styles/homepage/homepage"
 import Image from "next/legacy/image"
 import Link from "next/link"
 
@@ -14,12 +14,15 @@ const HomePage=({notes})=>{
         return(
         <ul key={notes._id}>
         <NotesContainer>
-          <Image
+        <LinksImage href={`/${notes.title}`}>
+         <Image
+          layout="responsive" 
+          width={1000} 
+          height={500} 
           src={notes.imageUrl}
-          height={200}
-          width={250}
           alt={notes.title}
-        />
+        />         
+         </LinksImage> 
         <Links href={`/${notes.title}`}>
           <h1>{notes.title}</h1>
         </Links>
@@ -36,7 +39,7 @@ export async function getServerSideProps(context) {
   const BASE_URL = process.env.BASE_URL;
   const res = await fetch(`${BASE_URL}api/notes`)
   const notesdata = await res.json()
-  console.log(notesdata)
+
   if(!notesdata){
 
       return {
