@@ -6,7 +6,7 @@ import {useCookies} from "react-cookie"
 import CodeBlock from "@/styles/codecontainers/highlighter";
 import remarkGfm from "remark-gfm";
 
-const Newnotes = (props) => {
+const Newnotes = () => {
   const [cookies,setCookies]=useCookies(["access_token","userID"]);
   const [note, setNote] = useState({ markdown: '', userOwner:cookies.userID, });
   const [title, setTitle] = useState('');
@@ -44,9 +44,6 @@ const Newnotes = (props) => {
     }
   }
 
-  const renderImage = (props) => {
-    return <img src={props.src} alt={props.alt} />;
-  };
 
   return (
     <>
@@ -66,8 +63,7 @@ const Newnotes = (props) => {
     />      
     </form>
     <Reviewarea
-      source={props.source}
-      render={renderImage}
+      skipHtml={false}
       components={CodeBlock}
       remarkPlugins={[remarkGfm]}      
       >
