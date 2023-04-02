@@ -81,7 +81,7 @@ const NavbarComponent = () => {
           </Searchbox>
           {!cookies.access_token?(
             <>
-             <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+             <AuthButtons onClick={handleSignIN}>LogIn</AuthButtons>
             <AuthButtons onClick={handleSignUp}>SignUp</AuthButtons>
             </>
           ):(

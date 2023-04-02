@@ -247,9 +247,18 @@ export const AuthButtons = styled.button`
 `;
 
 export const LogoutButton = styled.button`
-background:rgb(71,207,115);
-  ${mq[1]}{
-    background: linear-gradient(360deg, rgba(43,58,135,1) 61%, rgba(51,125,140,1) 100%);
+background: rgb(71,207,115);
+border: 1px solid rgb(41,151,78);
+border-radius:5px;  
+width:90px;
+color:white;
+position:relative;
+top:5px;
+height:35px;
+text-align:center;
+font-size:16px;
+font-weight:700;
+${mq[1]}{
     border: 1px solid;
     border-radius:5px;  
     width:20vw;
