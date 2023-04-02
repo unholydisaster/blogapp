@@ -3,8 +3,6 @@ import { lq,mq } from "../signin_signup/signup"
 import ReactMarkdown from "react-markdown";
 
 export const ArticleContainer = styled.div`
-  display:grid;
-  grid-template-columns:repeat(1, 1fr);
   position:absolute;
   top:20vh;
   background:white;
@@ -22,31 +20,26 @@ export const ArticleContainer = styled.div`
 `
 
 export const Article = styled(ReactMarkdown)`
-  grid-template-columns: 1fr;
   position:relative;
   padding:10px;
   font-size: 18px;
   width:100%;
   word-wrap: break-word;
 
-  img{
-  .heroimage{
-    width:auto;
-    height: auto;
-  }
-  }
   ${mq[1]}{
     position:relative;
     padding:10px;
     font-size: 18px;
-    width:inherit;
     height:inherit;
 
-  img{
-    .heroimage{
-      width:90vw;
-      height:auto;
+    img{
+      width:50vw;
+      height: auto;
+      
+      .heroimage{
+        width:90vw;
+        height:40vw;
+      }
     }
-  }
 `;
 

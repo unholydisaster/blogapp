@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 const Codecontainer = styled(SyntaxHighlighter)`
-  width: 98%;
+  width:100%;
   position: relative;
-  left: 10px;
+  
 `;
 
 const CodeBlock = {

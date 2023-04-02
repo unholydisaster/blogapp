@@ -252,13 +252,13 @@ background:rgb(71,207,115);
     background: linear-gradient(360deg, rgba(43,58,135,1) 61%, rgba(51,125,140,1) 100%);
     border: 1px solid;
     border-radius:5px;  
-    width:70px;
+    width:20vw;
     height:35px;
     text-align:center;
-    position:absolute;
+    position:relative;
     top:0px;
-    font-size:16px;
-    font-weight:700;
+    font-size:85%;
+    font-weight:600;
   }
 `;
 

@@ -10,21 +10,21 @@ const HomePage=({notes})=>{
   return(
     <>
     <GridContainer>
-      {notes.map((notes)=>{
+      {notes.map((note)=>{
         return(
-        <ul key={notes._id}>
+        <ul key={note._id}>
         <NotesContainer>
-        <LinksImage href={`/${notes.title}`}>
+        <LinksImage href={`/${note.title}`}>
          <Image
           layout="responsive" 
           width={1000} 
           height={500} 
-          src={notes.imageUrl}
-          alt={notes.title}
+          src={note.imageUrl}
+          alt={note.title}
         />         
          </LinksImage> 
-        <Links href={`/${notes.title}`}>
-          <h1>{notes.title}</h1>
+        <Links href={`/${note.title}`}>
+          <h1>{note.title}</h1>
         </Links>
         </NotesContainer> 
         </ul>
