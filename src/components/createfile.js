@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import {useCookies} from "react-cookie"
+import CodeBlock from "@/styles/codecontainers/highlighter";
+import remarkGfm from "remark-gfm";
 
-const Newnotes = () => {
+const Newnotes = (props) => {
   const [cookies,setCookies]=useCookies(["access_token","userID"]);
   const [note, setNote] = useState({ markdown: '', userOwner:cookies.userID, });
   const [title, setTitle] = useState('');
@@ -42,6 +44,10 @@ const Newnotes = () => {
     }
   }
 
+  const renderImage = (props) => {
+    return <img src={props.src} alt={props.alt} />;
+  };
+
   return (
     <>
     {!cookies.access_token?(
@@ -59,7 +65,12 @@ const Newnotes = () => {
       onChange={handleChange}
     />      
     </form>
-    <Reviewarea>
+    <Reviewarea
+      source={props.source}
+      render={renderImage}
+      components={CodeBlock}
+      remarkPlugins={[remarkGfm]}      
+      >
       {note.markdown}
     </Reviewarea>    
     </Container>

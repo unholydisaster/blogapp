@@ -5,10 +5,17 @@ import { ArticleContainer,Article } from "@/styles/articles/articlepage";
 import CodeBlock from "@/styles/codecontainers/highlighter";
 import remarkGfm from "remark-gfm";
 
-export default function NotesByTitle({ note }) {
+export default function NotesByTitle({ note,props }) {
+  const renderImage = (props) => {
+    return <img src={props.src} alt={props.alt} />;
+  };
   return(
     <ArticleContainer>
-    <Article components={CodeBlock} remarkPlugins={[remarkGfm]}>
+    <Article 
+      source={props.source}
+      render={renderImage}
+      components={CodeBlock}
+      remarkPlugins={[remarkGfm]}>
     {note}
     </Article>
     </ArticleContainer>
